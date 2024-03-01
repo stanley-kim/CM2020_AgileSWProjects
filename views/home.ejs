@@ -9,19 +9,15 @@
 
 <body>
     <center>
-        <h1>Login Page </h1>
-        <h2><%= problem %></h2>
-        <table>
-            <form action="/ANS1" method="POST">
-                <button type="submit">1.</button>
-            </form>
-            <%= ans1 %>
-            <br />
-            <form action="/ANS2" method="POST">
-                <button type="submit">2.</button>
-            </form>
-            <%= ans2 %>
-        </table>
+        <h1>Career Suggestion for UoL Students</h1>
+        <h2><%= str_problem %></h2>
+        
+        <form action="/ANS" method="POST">
+            <input type="hidden" name="Problem_Name" value=<%= id_problem %>>
+            <button type="submit" name="button" value="left">1.</button><%= str_ans1 %><br>
+            <button type="submit" name="button" value="right">2.</button><%= str_ans2 %>
+        </form>
+        
     </center>
 </body>
 
