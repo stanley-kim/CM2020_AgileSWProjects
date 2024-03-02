@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Login
+    </title>
+</head>
+
+<body>
+    <center>
+        <h1>Career Suggestion for UoL Students</h1>
+        <h2><%= str_problem %></h2>
+        
+        <form action="/ANS" method="POST">
+            <input type="hidden" name="Problem_Name" value=<%= id_problem %>>
+            <button type="submit" name="button" value="left">1.</button><%= str_ans1 %><br>
+            <button type="submit" name="button" value="right">2.</button><%= str_ans2 %>
+        </form>
+        
+    </center>
+</body>
+
+</html>
+
+
