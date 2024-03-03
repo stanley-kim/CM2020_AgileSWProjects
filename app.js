@@ -1,3 +1,4 @@
+const VERSION_APP = '1.00'
 
 class TreeNode {
 	constructor(isProblem, id_problem, str_problem, str_ans0, str_ans1, str_suggestion) {
@@ -139,8 +140,8 @@ app.post('/ANS', function(req, res){
 	}
 );
  
-app.listen(3000, () => {
-		console.log('listening');  
+app.listen(process.env.PORT || 3000, () => {
+		console.log(VERSION_APP, 'listening');  
 
 	}  
 ); 
