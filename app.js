@@ -1,140 +1,100 @@
 const VERSION_APP = '1.00'
 
-class TreeNode {
-	constructor(isProblem, id_problem, str_problem, str_ans0, str_ans1, str_suggestion) {
-		this.isProblem = isProblem;
-		this.id_problem = id_problem;
-		this.str_problem = str_problem;
-		this.str_ans0 = str_ans0;
-		this.str_ans1 = str_ans1;
-		this.str_suggestion = str_suggestion;
-		this.children_ans = [];
-	}
-}
+const Tree = require('./tree.js');
 
-class Tree {
-	constructor(str_problem, str_ans0, str_ans1) {
-		this.root = new TreeNode(true, "0", str_problem, str_ans0, str_ans1);
-		this.dict_id = {"0": this.root};
-	}
-	insert(parentNode, isProblem, id_problem, str_problem, str_ans0, str_ans1, str_suggestion) {
-		let newNode = new TreeNode(isProblem, id_problem, str_problem, str_ans0, str_ans1, str_suggestion);
-		parentNode.children_ans.push(newNode);
-		this.dict_id[id_problem] = newNode;
-	}
-}
+function build_ProblemTree() {
+	ProblemTree = new Tree('What is your CM2025 score??', 'Above 60', '50 ~ 59');
 
-function build_Tree() {
-	ProblemTree = new Tree('What is your CM2025 score??', 'Above 60', '50 ~ 59', null);
-
-	root_ID0 = ProblemTree.root;
-
-	ProblemTree.insert(root_ID0, true, "00",  'What is 1-0th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(root_ID0, true, "01", 'What is 1-1th question?', 'OOP', 'Security', null);
+	ID_Root = ProblemTree.get_Root_ID();
+	ProblemTree.insert2(ID_Root, ID_Root + "0", true, 'What is 00th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_Root, ID_Root + "1", true, 'What is 01th question?', 'OOP', 'Security', null);
 	
-	child_ID00 = root_ID0.children_ans[0];
+	ID_Left_Child  = ProblemTree.get_Left_Child_ID(ID_Root);
+	ID_Right_Child = ProblemTree.get_Right_Child_ID(ID_Root);
+
+	ProblemTree.insert2(ID_Left_Child, ID_Left_Child + "0", true, 'What is 000th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_Left_Child, ID_Left_Child + "1", true, 'What is 001th question?', 'Security', 'Graphics', null);	
+	ProblemTree.insert2(ID_Right_Child, ID_Right_Child + "0", true, 'What is 010th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_Right_Child, ID_Right_Child + "1", true, 'What is 011th question?', 'Security', 'Graphics', null);
 	
-	ProblemTree.insert(child_ID00, true, "000", 'What is 2-0th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID00, true, "001", 'What is 2-1th question?', 'Security', 'Graphics', null);
-	
-	child_ID01 = root_ID0.children_ans[1];
-	
-	ProblemTree.insert(child_ID01, true, "010", 'What is 2-2th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID01, true, "011", 'What is 2-3th question?', 'Security', 'Graphics', null);
-	
-	child_ID000 = child_ID00.children_ans[0];
-	ProblemTree.insert(child_ID000, true, "0000", 'What is 3-0th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID000, true, "0001", 'What is 3-1th question?', 'Security', 'Graphics', null);
-	
-	child_ID001 = child_ID00.children_ans[1];
-	ProblemTree.insert(child_ID001, true, "0010", 'What is 3-2th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID001, true, "0011", 'What is 3-3th question?', 'Security', 'Graphics', null);
-	
-	child_ID010 = child_ID01.children_ans[0];
-	ProblemTree.insert(child_ID010, true, "0100", 'What is 3-4th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID010, true, "0101",  'What is 3-5th question?', 'Security', 'Graphics', null);
-	
-	child_ID011 = child_ID01.children_ans[1];
-	ProblemTree.insert(child_ID011, true, "0110", 'What is 3-6th question?', 'Security', 'Graphics', null);
-	ProblemTree.insert(child_ID011, true, "0111",  'What is 3-7th question?', 'Security', 'Graphics', null);	
+	ID_LL_Child = ProblemTree.get_Left_Child_ID(ID_Left_Child);
+	ID_LR_Child = ProblemTree.get_Right_Child_ID(ID_Left_Child);
+	ID_RL_Child = ProblemTree.get_Left_Child_ID(ID_Right_Child);
+	ID_RR_Child = ProblemTree.get_Right_Child_ID(ID_Right_Child);
 
-	child_ID0000 = child_ID000.children_ans[0];
-	ProblemTree.insert(child_ID0000, false, "00000", "1", "2", "3", "Suggestion 00000");
-	ProblemTree.insert(child_ID0000, false, "00001", null, null, null, "Suggestion 00001");
+	ProblemTree.insert2(ID_LL_Child, ID_LL_Child + "0", true, 'What is 0000th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_LL_Child, ID_LL_Child + "1", true, 'What is 0001th question?', 'Security', 'Graphics', null);	
+	ProblemTree.insert2(ID_LR_Child, ID_LR_Child + "0", true, 'What is 0010th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_LR_Child, ID_LR_Child + "1", true, 'What is 0011th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_RL_Child, ID_RL_Child + "0", true, 'What is 0100th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_RL_Child, ID_RL_Child + "1", true, 'What is 0101th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_RR_Child, ID_RR_Child + "0", true, 'What is 0110th question?', 'Security', 'Graphics', null);
+	ProblemTree.insert2(ID_RR_Child, ID_RR_Child + "1", true, 'What is 0111th question?', 'Security', 'Graphics', null);	
 
-	child_ID0001 = child_ID000.children_ans[1];
-	ProblemTree.insert(child_ID0001, false, "00010", null, null, null, "Suggestion 00010");
-	ProblemTree.insert(child_ID0001, false, "00011", null, null, null, "Suggestion 00011");
+	ID_LLL_Child = ProblemTree.get_Left_Child_ID(ID_LL_Child);
+	ID_LLR_Child = ProblemTree.get_Right_Child_ID(ID_LL_Child);
+	ID_LRL_Child = ProblemTree.get_Left_Child_ID(ID_LR_Child);
+	ID_LRR_Child = ProblemTree.get_Right_Child_ID(ID_LR_Child);
+	ID_RLL_Child = ProblemTree.get_Left_Child_ID(ID_RL_Child);
+	ID_RLR_Child = ProblemTree.get_Right_Child_ID(ID_RL_Child);
+	ID_RRL_Child = ProblemTree.get_Left_Child_ID(ID_RR_Child);
+	ID_RRR_Child = ProblemTree.get_Right_Child_ID(ID_RR_Child);
 
-	child_ID0010 = child_ID001.children_ans[0];
-	ProblemTree.insert(child_ID0010, false, "00100", null, null, null, "Suggestion 00100");
-	ProblemTree.insert(child_ID0010, false, "00101", null, null, null, "Suggestion 00101");
-
-	child_ID0011 = child_ID001.children_ans[1];
-	ProblemTree.insert(child_ID0011, false, "00110", null, null, null, "Suggestion 00110");
-	ProblemTree.insert(child_ID0011, false, "00111", null, null, null, "Suggestion 00111");
-
-	child_ID0100 = child_ID010.children_ans[0];
-	ProblemTree.insert(child_ID0100, false, "01000", null, null, null, "Suggestion 01000");
-	ProblemTree.insert(child_ID0100, false, "01001", null, null, null, "Suggestion 01001");
-
-	child_ID0101 = child_ID010.children_ans[1];
-	ProblemTree.insert(child_ID0101, false, "01010", null, null, null, "Suggestion 01010");
-	ProblemTree.insert(child_ID0101, false, "01011", null, null, null, "Suggestion 01011");
-
-	child_ID0110 = child_ID011.children_ans[0];
-	ProblemTree.insert(child_ID0110, false, "01100", null, null, null, "Suggestion 01100");
-	ProblemTree.insert(child_ID0110, false, "01101", null, null, null, "Suggestion 01101");
-
-	child_ID0111 = child_ID011.children_ans[1];
-	ProblemTree.insert(child_ID0111, false, "01110", null, null, null, "Suggestion 01110");
-	ProblemTree.insert(child_ID0111, false, "01111", null, null, null, "Suggestion 01111");
+	ProblemTree.insert2(ID_LLL_Child, ID_LLL_Child + "0", false, "1", "2", "3", "Suggestion 00000");
+	ProblemTree.insert2(ID_LLL_Child, ID_LLL_Child + "1", false, null, null, null, "Suggestion 00001");
+	ProblemTree.insert2(ID_LLR_Child, ID_LLR_Child + "0", false, null, null, null, "Suggestion 00010");
+	ProblemTree.insert2(ID_LLR_Child, ID_LLR_Child + "1", false, null, null, null, "Suggestion 00011");
+	ProblemTree.insert2(ID_LRL_Child, ID_LRL_Child + "0", false, null, null, null, "Suggestion 00100");
+	ProblemTree.insert2(ID_LRL_Child, ID_LRL_Child + "1", false, null, null, null, "Suggestion 00101");
+	ProblemTree.insert2(ID_LRR_Child, ID_LRR_Child + "0", false, null, null, null, "Suggestion 00110");
+	ProblemTree.insert2(ID_LRR_Child, ID_LRR_Child + "1", false, null, null, null, "Suggestion 00111");
+	ProblemTree.insert2(ID_RLL_Child, ID_RLL_Child + "0", false, null, null, null, "Suggestion 01000");
+	ProblemTree.insert2(ID_RLL_Child, ID_RLL_Child + "1", false, null, null, null, "Suggestion 01001");
+	ProblemTree.insert2(ID_RLR_Child, ID_RLR_Child + "0", false, null, null, null, "Suggestion 01010");
+	ProblemTree.insert2(ID_RLR_Child, ID_RLR_Child + "1", false, null, null, null, "Suggestion 01011");
+	ProblemTree.insert2(ID_RRL_Child, ID_RRL_Child + "0", false, null, null, null, "Suggestion 01100");
+	ProblemTree.insert2(ID_RRL_Child, ID_RRL_Child + "1", false, null, null, null, "Suggestion 01101");
+	ProblemTree.insert2(ID_RRR_Child, ID_RRR_Child + "0", false, null, null, null, "Suggestion 01110");
+	ProblemTree.insert2(ID_RRR_Child, ID_RRR_Child + "1", false, null, null, null, "Suggestion 01111");
 
 	return ProblemTree;
 }
 
-
-
-ProblemTree = build_Tree();
+ProblemTree = build_ProblemTree();
 
 const app = require('express')();
-
 app.set('view engine', 'ejs');
 app.set('views', './views');
-
-let express = require('express')
-app.use(express.urlencoded({
+app.use(require('express').urlencoded({
 	extended: true
 }))
-
+ 
 app.get('/', (req, res) => {
-		app.locals.id_problem = ProblemTree.root.id_problem;
-		app.locals.str_problem = ProblemTree.root.str_problem;
-		app.locals.str_ans1 = ProblemTree.root.str_ans0;
-		app.locals.str_ans2 = ProblemTree.root.str_ans1;		
+		app.locals.Id_Node = ProblemTree.root.id_Node;
+		app.locals.Str_Problem = ProblemTree.root.str_problem;
+		app.locals.Str_Ans1 = ProblemTree.root.str_ans0;
+		app.locals.Str_Ans2 = ProblemTree.root.str_ans1;		
 		res.render('home');
 	} 
 );  
  
 app.post('/ANS', function(req, res){
-		console.log(req.body.Problem_Name)
-		console.log(req.body.button)
+		console.log('<', req.body.Problem_Name, '->', req.body.button, '>');
 
 		Parent_Node = ProblemTree.dict_id[req.body.Problem_Name];
 		selected_Child_Node = Parent_Node.children_ans[(req.body.button == 'left')?0:1];
 
 		if (selected_Child_Node.isProblem == true) {
-			app.locals.id_problem = selected_Child_Node.id_problem;
-			app.locals.str_problem = selected_Child_Node.str_problem;
-			app.locals.str_ans1 = selected_Child_Node.str_ans0;
-			app.locals.str_ans2 = selected_Child_Node.str_ans1;
+			app.locals.Id_Node = selected_Child_Node.id_Node;
+			app.locals.Str_Problem = selected_Child_Node.str_problem;
+			app.locals.Str_Ans1 = selected_Child_Node.str_ans0;
+			app.locals.Str_Ans2 = selected_Child_Node.str_ans1;
 			res.render('home');
 		}
 		else {
-			console.log(selected_Child_Node.id_problem);
-			console.log(selected_Child_Node.str_suggestion);
-			app.locals.id_problem = selected_Child_Node.id_problem;
-			app.locals.str_problem = selected_Child_Node.str_suggestion;	
+			console.log('[',selected_Child_Node.id_Node, selected_Child_Node.str_suggestion, ']');
+			app.locals.Id_Node = selected_Child_Node.id_Node;
+			app.locals.Str_Suggestion = selected_Child_Node.str_suggestion;	
 			res.render('suggestion');
 		}
 	}
