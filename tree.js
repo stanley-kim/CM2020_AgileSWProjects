@@ -26,6 +26,16 @@ class Tree {
         return this.dict_id[ID_PARENT].children_ans[1].id_Node;
     }
 	insert2(Id_Parent, Id_Node, isProblem, str_problem, str_ans0, str_ans1, str_suggestion) {
+		if (null == Id_Node || null == Id_Parent)
+			return false;
+		if (Id_Node in this.dict_id)
+			return false;
+		if (!(Id_Parent in this.dict_id))
+		 	return false;
+		if (isProblem && null == str_problem)
+			return false;
+		if (!isProblem && null == str_suggestion)
+			return false;
 		let newNode = new TreeNode(Id_Node, isProblem, str_problem, str_ans0, str_ans1, str_suggestion);
         let parentNode = this.dict_id[Id_Parent];
         parentNode.children_ans.push(newNode);
