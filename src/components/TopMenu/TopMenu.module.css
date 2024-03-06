@@ -5,6 +5,7 @@
     margin: 0  auto;
     display: grid;
     grid-template-columns: 100px 800px 400px;
+    z-index: 1;
 }
 
 .logo {

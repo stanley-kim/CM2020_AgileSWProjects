@@ -35,7 +35,7 @@ const Home = () => {
             </section>
             
 
-            <section className={s.about_section}>
+            <section className={s.about_section} id="about">
                 <div>
                     <h1 className={s.about_heading}>
                         About Us
