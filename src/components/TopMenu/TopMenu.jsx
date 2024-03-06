@@ -18,7 +18,7 @@ const TopMenu = () => {
           <Link to="/questionnaire">Questionnaire</Link>
         </li>
         <li>
-          <Link to="/#about">About</Link>
+          <Link to="/" onClick={() => document.getElementById('about')?.scrollIntoView()}>About</Link>
         </li>
         
       </ul>
