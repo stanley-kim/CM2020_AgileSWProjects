@@ -1,0 +1,39 @@
+.top_menu {
+    padding: 10px;
+    position: relative;
+    width: 1200px;
+    margin: 0  auto;
+    display: grid;
+    grid-template-columns: 100px 800px 400px;
+}
+
+.logo {
+    position: absolute;
+    top: 20;
+    left: 20;
+  }
+
+.ulist {
+    position: absolute;
+    right: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 30px;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: "Outfit";
+}
+
+a:hover {
+    color: #0C4BA9;
+    transition: color 0.25s;
+}
