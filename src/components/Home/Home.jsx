@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import s from './Home.module.css';
 
 import PurpleButton from '../PurpleButton/PurpleButton';
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <div>
             <section className={s.home_section}>
@@ -15,7 +17,7 @@ const Home = () => {
                     Discover the best career options for UOL BSC students and make <br />
                     informed decisions about your future.
                 </p>
-                <PurpleButton text={"START QUESTIONNAIRE"} />
+                <PurpleButton text={"START QUESTIONNAIRE"} onClick={() => navigate("/questionnaire")} />
                 <svg className={s.home_circle} width="568" height="1093" viewBox="0 0 568 1093" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_f_2040_2109)">
                     <circle cx="600.5" cy="492.5" r="292.5" fill="#7775FF" fillOpacity="0.39"/>
