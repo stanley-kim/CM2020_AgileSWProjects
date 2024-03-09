@@ -1,0 +1,238 @@
+
+[
+  {
+    "section": "Interests, Values & Personality Traits",
+    "questions": [
+      {
+        "question": "What are your interests?",
+        "options": [
+          "Software Engineering",
+          "Artificial Intelligence",
+          "Computer Security",
+          "Virtual reality",
+          "Computer Networks",
+          "Human-computer Interaction",
+          "Computer Architecture",
+          "Data Science",
+          "Games Development",
+          "Web Development"
+        ]
+      },
+      {
+        "question": "What are your values?",
+        "options": [
+          "Leadership",
+          "Collaboration",
+          "Challenge",
+          "Compensation",
+          "Job security",
+          "Recognition",
+          "Family",
+          "Support",
+          "Leisure",
+          "Promotions"
+        ]
+      },
+      {
+        "question": "What is your personality?",
+        "options": [
+          "Ethical",
+          "Trustworthy",
+          "Meticulous",
+          "Communicative",
+          "Organized",
+          "Attentive",
+          "Adaptable"
+        ]
+      },
+      {
+        "question": "Do you prefer to work in a team or individually?",
+        "options": [
+          "Individually",
+          "Teamwork"
+        ]
+      },
+      {
+        "question": "Would you prefer a task that requires more analytical or creative skills?",
+        "options": [
+          "Analytical",
+          "Creative"
+        ]
+      },
+      {
+        "question": "What are your passions?",
+        "options": [
+          "Data safety",
+          "Combining Analytical & Creative Skills",
+          "Make peoples jobs easier and more productive",
+          "Designing applications",
+          "Testing applications",
+          "Design"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Skills, Attributes & Education",
+    "questions": [
+      {
+        "question": "What are your skills?",
+        "options": [
+          "Python",
+          "SQL",
+          "Machine learning",
+          "Cloud Computing",
+          "Cybersecurity",
+          "Web servers",
+          "Database management",
+          "Networking",
+          "Software development",
+          "Design",
+          "Analytics",
+          "Java",
+          "C++",
+          "Javascript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "question": "What are your strengths?",
+        "options": [
+          "Communication skills",
+          "Attention to detail",
+          "Problem-Solving skills",
+          "Ability to gather and interpret information",
+          "Analytical skills"
+        ]
+      },
+      {
+        "question": "What education do you have?",
+        "options": [
+          "BSC Degree",
+          "Graduate Diploma",
+          "Graduate Certificate",
+          "DipHE",
+          "CertHE"
+        ]
+      },
+      {
+        "question": "Do you have Work Experience?",
+        "options": [
+          "No",
+          "Yes"
+        ]
+      },
+      {
+        "question": "How much work experience do you have?",
+        "options": [
+          "None",
+          "1-3 years",
+          "4-6 years",
+          "7-9 years",
+          "10+ years"
+        ]
+      },
+      {
+        "question": "What specialism have you selected at UOL? (if 9 is selected, maybe show a screen that this is only for BSC students)",
+        "options": [
+          "Computer Science",
+          "Data Science",
+          "Machine Learning and Artificial Intelligence",
+          "Web and Mobile Development",
+          "User Experience",
+          "Physical Computing and the Internet of Things",
+          "Games Development",
+          "Virtual Reality",
+          "None of the Above"
+        ]
+      },
+      {
+        "question": "What are your next career steps?",
+        "options": [
+          "Internship",
+          "Continue to do Master's Degree",
+          "Find a Career"
+        ]
+      },
+      {
+        "question": "Select the modules you have completed (Show all modules)",
+        "options": [
+          "Introduction to programming",
+          "Introduction to programming II",
+          "Computational Mathematics",
+          "Discrete Mathematics",
+          "Fundamentals of Computer Science",
+          "How Computers Work",
+          "Algorithms and Data Structures I",
+          "Web Development",
+          "Object-oriented Programming",
+          "Software Design and Development",
+          "Programming with Data",
+          "Agile Software Projects",
+          "Computer Security",
+          "Graphics Programming",
+          "Algorithms and Data Structures II",
+          "Databases, Networks and the Web",
+          "Data Science",
+          "Databases and Advanced Data Techniques",
+          "Machine Learning and Neural Networks",
+          "Advanced Web Development",
+          "Natural Language Processing",
+          "Artificial Intelligence",
+          "Intelligent Signal Processing",
+          "Virtual Reality",
+          "Games Development",
+          "Interaction Design",
+          "3D Graphics and Animation",
+          "Physical Computing and the Internet of things"
+        ]
+      },
+      {
+        "question": "Based on enjoyability, Show and Rate each module selected in above question (Use Likert Scale)",
+        "options": [
+          "Strongly Disagree",
+          "Disagree",
+          "Niether Agree nor Disagree",
+          "Agree",
+          "Strongly Agree"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Salary & Lifestyle",
+    "questions": [
+      {
+        "question": "How important is money to you? (Scale 1 - 5)",
+        "options": [
+          "Not at all important",
+          "Slightly important",
+          "Important",
+          "Fairly Important",
+          "Very Important"
+        ]
+      },
+      {
+        "question": "How important is work-life balance to you? (Scale 1 - 5)",
+        "options": [
+          "Not at all important",
+          "Slightly important",
+          "Important",
+          "Fairly Important",
+          "Very Important"
+        ]
+      },
+      {
+        "question": "How important is flexibility in the workplace to you? (Scale 1 - 5)",
+        "options": [
+          "Not at all important",
+          "Slightly important",
+          "Important",
+          "Fairly Important",
+          "Very Important"
+        ]
+      }
+    ]
+  }
+]
