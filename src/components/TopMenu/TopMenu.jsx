@@ -1,14 +1,15 @@
 import s from './TopMenu.module.css';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import topLogo from "../../assets/Vocation.png"
 
 
 const TopMenu = () => {
+  const navigate = useNavigate()
   return (
     <div className={s.top_menu}>
-      <img src={topLogo} className={s.logo} alt="logo" />
+      <img src={topLogo} className={s.logo} alt="logo" onClick={() => navigate('/') }/>
 
       <ul className={s.ulist}>
         <li>
