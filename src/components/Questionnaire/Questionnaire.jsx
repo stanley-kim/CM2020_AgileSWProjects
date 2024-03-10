@@ -28,9 +28,12 @@ const Questionnaire = ({ questions }) => {
       }, []);
 
     const handleOptionSelect = (option, type) => {
-        if (type === 'single') setSelectedOption(option);
+        // console.log(selectedOption)
+        // if (type === 'single') {
+        //     setSelectedOption(option)
+        // };
 
-        if (type === 'multi') {
+        // if (type === 'multi') {
             setSelectedOption((prevSelectedOptions) => {
               const optionsArray = prevSelectedOptions || []; // Ensure it's an array
           
@@ -38,11 +41,14 @@ const Questionnaire = ({ questions }) => {
                 ? optionsArray.filter((selectedOption) => selectedOption !== option)
                 : [...optionsArray, option];
             });
-        }
+        // }
+
+        
     };
 
 
     const handleAnswerSelect = (question, answer, type) => {
+        // console.log("answers: " + Object.values(answers))
         setAnswers((prevAnswers) => {
         // If the question is multiple-choice ('multi'), store answers as an array
             if (type === 'multi') {
@@ -55,11 +61,12 @@ const Questionnaire = ({ questions }) => {
                     ? currentAnswers.filter((selectedOption) => selectedOption !== answer)
                     : [...currentAnswers, answer],
                 };
-            } else {
+            } 
+            if(type === 'single') {
                 // For single-choice and other types, store answers directly
                 return {
-                ...prevAnswers,
-                [question]: [answer],
+                    ...prevAnswers,
+                    [question]: [answer],
                 };
             }
         });
@@ -137,9 +144,8 @@ const Questionnaire = ({ questions }) => {
                                                                 type={
                                                                     type === 'multi' ? 'checkbox' : type === 'single' ? 'radio' : 'text'
                                                                 }
-                                                                // defaultValue={type === 'text' && option}
                                                                 checked={
-                                                                    type === 'multi'
+                                                                    type === 'multi' || type === 'single'
                                                                         ? (selectedOption || []).includes(option)
                                                                         : selectedOption === option
                                                                 }
