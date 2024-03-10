@@ -42,4 +42,25 @@
 .option_text {
     color: #A3A3A3;
     line-height: 2;
+    margin-left: 10px;
 }
+
+.canvas {
+    position: relative;
+    z-index: 2;
+}
+
+
+.canvas_container {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 200px auto 0;
+    min-height: 100vh;
+    grid-gap: 20px;
+}
+
+.pie_chart_heading {
+    color: white;
+    text-align: center;
+}   

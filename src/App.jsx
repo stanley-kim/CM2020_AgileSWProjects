@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TopMenu from './components/TopMenu/TopMenu';
 import Home from './components/Home/Home';
 import Questionnaire from './components/Questionnaire/Questionnaire';
-import questionnaire from './questionnaire.json';
+import questionnaire from './data/questionnaire.json';
 import Footer from './components/Footer/Footer';
 
 
