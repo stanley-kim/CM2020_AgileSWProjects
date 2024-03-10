@@ -1,0 +1,105 @@
+[
+  {
+    "section": "Interests, Values & Personality Traits",
+    "questions": [
+      {
+        "type": "multi",
+        "question": "What are your interests?",
+        "options": [
+          "3D Graphics",
+          "Artificial Intelligence",
+          "Animation",
+          "Computer Architecture",
+          "Data",
+          "Databases",
+          "Deep learning",
+          "Finance",
+          "Intelligent Signal Processing",
+          "ML",
+          "Mobile Development",
+          "Natural Language Processing",
+          "User Interface Design",
+          "Web development"
+        ]
+      },
+      {
+        "type": "single",
+        "question": "Do you prefer to work in a team or individually?",
+        "options": ["Individually", "Teamwork"]
+      },
+      {
+        "type": "multi",
+        "question": "What are your passions?",
+        "options": [
+          "Data safety",
+          "Analytics",
+          "Automation",
+          "Design",
+          "Testing",
+          "Creativity"
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Skills, Attributes & Education",
+    "questions": [
+      {
+        "type": "single",
+        "question": "What is your favorite UOL level 5 module?",
+        "options": [
+          "Object-oriented Programming",
+          "Software Design and Development",
+          "Programming with data",
+          "Agile Software Projects",
+          "Computer Security",
+          "Graphics Programming",
+          "Algorithms and Data Structures II",
+          "Databases, Networks and the Web"
+        ]
+      },
+      {
+        "type": "single",
+        "question": "What specialism have you selected at UOL?",
+        "options": [
+          "Computer Science (No specialism)",
+          "Data Science",
+          "Machine Learning and Artificial Intelligence",
+          "Web and Mobile Development",
+          "User Experience",
+          "Physical Computing and the Internet of Things",
+          "Games Development",
+          "Virtual Reality"
+        ]
+      },
+      {
+        "type": "multi",
+        "question": "What tool/language do you enjoy the most? (Select 3)",
+        "options": ["figma", "python", "Javascript", "C++", "C#", "CSS"]
+      }
+    ]
+  },
+  {
+    "section": "Salary & Lifestyle",
+    "questions": [
+      {
+        "type": "single",
+        "question": "How important is money to you? (Scale 1 - 5) (If Salary Is 4 or 5, choose the career with the highest salary)",
+        "options": [
+          "Not at all important",
+          "Slightly important",
+          "Important",
+          "Fairly Important",
+          "Very Important"
+        ]
+      },
+      {
+        "type": "text",
+        "question": "What is the work you can do for a long time without feeling tired or bored?",
+        "options": [
+          "Please enter your input"
+        ]
+      }
+    ]
+  }
+]
